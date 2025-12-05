@@ -32,7 +32,7 @@ function sendOrder(){
     alert('Sifariş göndərildi ✔');
 }
 
-// ----------------- Mətbəx Paneli -----------------
+// ----------------- Mətbəx Paneli (Real-time) -----------------
 var lastOrderIds = [];
 function loadKitchen(){
     db.ref('orders').on('value', snapshot => {
@@ -55,6 +55,7 @@ function loadKitchen(){
                         <b>Zaman:</b> ${o.time}
                     </div>`;
         });
+        // Yeni sifariş gəldisə səs çal
         currentIds.forEach(id => { if(!lastOrderIds.includes(id)) pingSound.play().catch(()=>{}); });
         lastOrderIds = currentIds;
         ordersBox.innerHTML = html;
