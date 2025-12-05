@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ofisiant Paneli</title>
+    <style>
+        body { font-family: Arial; margin:20px; }
+        input, button { padding:10px; margin:5px 0; width:100%; font-size:18px; }
+        #panel { display:none; margin-top:20px; background:#f2f2f2; padding:20px; border-radius:10px; }
+    </style>
+</head>
+<body>
+    <h1>Ofisiant Paneli</h1>
+    <input type="text" id="masa" placeholder="Masa nömrəsi">
+    <input type="text" id="mehsul" placeholder="Məhsul">
+    <input type="text" id="qeyd" placeholder="Qeyd (istəyə bağlı)">
+    <button onclick="sendOrder()">Sifarişi Göndər</button>
+
+    <h3>Admin Girişi</h3>
+    <input type="password" id="adminCode" placeholder="Admin kod">
+    <button onclick="adminLogin()">Daxil ol</button>
+
+    <div id="panel">
+        <h3>Admin Panel</h3>
+        <ul id="adminList"></ul>
+
+        <h3>Cərimə</h3>
+        <input type="number" id="cerimeAmount" placeholder="Məbləğ (AZN)">
+        <button onclick="addCerime()">Əlavə et</button>
+        <ul id="cerimeList"></ul>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
